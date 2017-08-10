@@ -1,0 +1,35 @@
+{% load i18n %}
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>{% trans "Example with django_tequila·" %}</title>
+  <meta name="description" content="Example">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th>User</th>
+      <th>Quantity</th>
+      <th>Text</th>
+      <th>Action</th>
+    </tr>
+    {% for order in orders %}
+      <tr>
+        <td>{{ order.user.username }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.text }}</td>
+        <td><a href="{% url 'edit_order' pk=order.pk %}">Edit</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

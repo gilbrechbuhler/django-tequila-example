@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>{% trans "Example with django_tequila·" %}</title>
+  <meta name="description" content="Example">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1>{% trans "Example with django_tequila." %}</h1>
+  <a href="{% url 'orders_list' %}">{% trans "Liste" %}</a>
+</body>
+</html>

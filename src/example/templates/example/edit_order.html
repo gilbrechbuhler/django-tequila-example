@@ -1,0 +1,28 @@
+{% load i18n %}
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>{% trans "Example with django_tequila·" %}</title>
+  <meta name="description" content="Example">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  {% if order %}
+    <form action="{% url 'edit_order' pk=order.pk %}" method="post">
+  {% else %}
+    <form action="{% url 'create_order' %}" method="post">
+  {% endif %}
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+  </form>
+</body>
+</html>
